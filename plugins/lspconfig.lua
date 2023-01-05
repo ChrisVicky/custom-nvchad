@@ -1,27 +1,29 @@
 -- Configuration on LSP Service
 
--- local M ={}
---
--- M.setup_lsp = function (attach, capabilities)
---   local lspconfig = require "lspconfig"
---   local servers = {"clangd", "html", "cmake_language_server", "lua_language_server", "ltex", "python_lsp_server", "rust_analyzer", "shellcheck"}
---
---   for _,lsp in ipairs(servers) do
---     lspconfig[lsp].setup{
---       on_attach = attach,
---       capabilities = capabilities,
---     }
---   end
--- end
---
--- return M
--- custom.plugins.lspconfig
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
-local lspconfig = require "lspconfig"
+local present, lspconfig = pcall(require, "lspconfig")
+if not present then
+  return
+end
 
-local servers = {"clangd", "html", "cmake_language_server", "lua_language_server", "ltex", "python_lsp_server", "rust_analyzer", "shellcheck"}
+-- Available servers (Alias): https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers
+--
+local servers = {
+  "clangd",                 -- C++
+  "html",                   -- html
+  "cmake",                  -- cmake_language_server
+  "ltex",                   -- LaTeX
+  "jedi_language_server",   -- Python LSP
+  "rust_analyzer",          -- Rust
+  "verible",                -- System Verilog
+  "dockerls",               -- Docker language server
+  "asm_lsp",                -- Assembly (GAS/NASM/GO)
+  "jdtls",                  -- Java
+  "bashls",                 -- Bash
+}
+
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,

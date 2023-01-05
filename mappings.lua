@@ -46,26 +46,27 @@ M.JumpBetweenWindows = {
     ["<leader><Down>"] = { "<C-w>j" ," Jump to the Window to the Down"},
     ["<leader><Up>"] = { "<C-w>k" ," Jump to the Window to the Up"},
   },
-  }
+}
 
-  M.mdip = {
-    n = {
-      ["<leader>pp"] = { ":call mdip#MarkdownClipboardImage()<CR><Esc>F!", "Insert an Image from Clipboard"},
-    },
-  }
+M.mdip = {
+  n = {
+    ["<leader>tt"]= {":call mdip#MarkdownClipboardImage()<CR><ESC>", "Insert an Image from Clipboard"},
+    ["<leader>pp"]= {":call mdip#MarkdownClipboardImageTitleMode()<CR><ESC>k$2F>", "Insert an Image from Clipboard -> HTML Format"},
+  },
+}
 
-  M.dap = {
-    n = {
-      ["<leader><F5>"] = {":lua require'dap'.continue()<CR>", "Lauching debug sessions and resuming execution"},
-      ["<leader>8"] = {":lua require'dap'.step_over()<CR>","step over"},
-      ["<leader>9"] = {":lua require'dap'.step_into()<CR>","step into"},
-      ["<leader>0"] = {"<Cmd>lua require'dap'.step_out()<CR>","step out"},
-      ["<Leader>b"] = {"<Cmd>lua require'dap'.toggle_breakpoint()<CR>","toggle breakpoint"},
-      ["<Leader>B"] = {"<Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>","set breakpoint with condition"},
-      ["<Leader>lp"] = {"<Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>","set breakpoint with condition and msg"},
-      ["<Leader>dr"] = {"<Cmd>lua require'dap'.repl.open()<CR>",""},
-      ["<Leader>dl"] = {"<Cmd>lua require'dap'.run_last()<CR>",""},
-    }
+M.dap = {
+  n = {
+    ["<leader><F5>"] = {":lua require'dap'.continue()<CR>", "Lauching debug sessions and resuming execution"},
+    ["<leader>8"] = {":lua require'dap'.step_over()<CR>","step over"},
+    ["<leader>9"] = {":lua require'dap'.step_into()<CR>","step into"},
+    ["<leader>0"] = {"<Cmd>lua require'dap'.step_out()<CR>","step out"},
+    ["<Leader>b"] = {"<Cmd>lua require'dap'.toggle_breakpoint()<CR>","toggle breakpoint"},
+    ["<Leader>B"] = {"<Cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>","set breakpoint with condition"},
+    ["<Leader>lp"] = {"<Cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>","set breakpoint with condition and msg"},
+    ["<Leader>dr"] = {"<Cmd>lua require'dap'.repl.open()<CR>",""},
+    ["<Leader>dl"] = {"<Cmd>lua require'dap'.run_last()<CR>",""},
   }
+}
 
-  return M
+return M

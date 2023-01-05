@@ -5,7 +5,7 @@ local M = {}
 M.plugins = require "custom.plugins"
 
 M.ui = {
-  theme = "catppuccin_latte",
+  theme = "catppuccin",
 }
 
 M.mappings = require "custom.mappings"
