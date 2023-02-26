@@ -29,8 +29,16 @@ return {
   --     ensure_installed = { "html-lsp", "clangd", "rust-analyzer", "cmake" , "python-lsp-server", "cmake-language-server"}
   --   }
   -- },
-  -- Dox vim plugin
-  ["babaybus/DoxygenToolkit.vim"] = {},
+
+  ["danymat/neogen"] = {
+    config=function()
+      require('neogen').setup{
+        enable = true,
+      }
+    end,
+    requires="nvim-treesitter/nvim-treesitter",
+  },
+
   -- Highlight TODO and NOTE .etc
   ["folke/todo-comments.nvim"] = {
     requires = "nvim-lua/plenary.nvim",

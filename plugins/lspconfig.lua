@@ -14,7 +14,8 @@ local servers = {
   "clangd",                 -- C++
   "html",                   -- html
   "cmake",                  -- cmake_language_server
-  "ltex",                   -- LaTeX
+  "texlab",                 -- LaTeX
+  "ltex",                   -- ltex-ls 好像是个 grammar
   "jedi_language_server",   -- Python LSP
   "rust_analyzer",          -- Rust
   "verible",                -- System Verilog
@@ -22,6 +23,7 @@ local servers = {
   "asm_lsp",                -- Assembly (GAS/NASM/GO)
   "jdtls",                  -- Java
   "bashls",                 -- Bash
+  "grammarly",              -- grammarly: 字典、语法等
 }
 
 for _, lsp in ipairs(servers) do

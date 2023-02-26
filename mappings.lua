@@ -50,7 +50,7 @@ M.JumpBetweenWindows = {
 
 M.mdip = {
   n = {
-    ["<leader>tt"]= {":call mdip#MarkdownClipboardImage()<CR><ESC>", "Insert an Image from Clipboard"},
+    ["<leader>pq"]= {":call mdip#MarkdownClipboardImage()<CR><ESC>", "Insert an Image from Clipboard"},
     ["<leader>pp"]= {":call mdip#MarkdownClipboardImageTitleMode()<CR><ESC>k$2F>", "Insert an Image from Clipboard -> HTML Format"},
   },
 }
